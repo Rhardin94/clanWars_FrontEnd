@@ -28,6 +28,7 @@ function App() {
     }
   ]);
 
+
   const renderPage = () => {
     switch (currentPage.name) {
       case 'home':
