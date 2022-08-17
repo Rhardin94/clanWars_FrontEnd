@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from "axios";
 
 class Home extends React.Component {
 
@@ -11,29 +12,15 @@ class Home extends React.Component {
     }
   }
 
-  // wakeServer = () => {
-  //   fetch("https://clanwarserver.herokuapp.com/api/wake", {
-      // method: 'GET',
-      // mode: "no-cors",
-      // credentials: 'same-origin',
-      // headers: {
-      //   "Content-Type": 'application/json'
-      // }
-  //   })
-  //   .then(response => console.log(response))
-  //   .catch(err => console.log(err));
-  // }
+  wakeServer = () => {
+    axios.get("https://clanwarserver.herokuapp.com/api/wake") 
+    .then(response => console.log(response))
+    .catch(err => console.log(err));
+  }
 
   
   getScores = () => {
-    fetch("https://clanwarserver.herokuapp.com/api", {
-      method: 'GET',
-      mode: "no-cors",
-      credentials: 'same-origin',
-      headers: {
-        "Content-Type": 'application/json'
-      }
-    })
+    axios.get("https://clanwarserver.herokuapp.com/api")
     .then((data) => console.log(data))
     // .then((scores) => response.json())
     .catch((err) => {
@@ -42,8 +29,8 @@ class Home extends React.Component {
   }
 
 	async componentDidMount() {
-    //  await this.wakeServer()
-    await setInterval(this.getScores(), 600)
+     await this.wakeServer()
+     setInterval(this.getScores(), 600)
   }
 
   render() {
@@ -53,9 +40,9 @@ class Home extends React.Component {
         <h1>Here are the scores:</h1>
         <ul>
           <li className='bg-success'>Green has: </li>
-          <li className='bg-danger'>Red has:</li>
-          <li className='bg-primary'>Blue has:</li>
-          <li className='bg-warning'>Yellow has:</li>
+          <li className='bg-danger'>Red has: </li>
+          <li className='bg-primary'>Blue has: </li>
+          <li className='bg-warning'>Yellow has: </li>
         </ul>
       </div>
     </section>

@@ -56,8 +56,8 @@ function App() {
           currentPage={currentPage}
         ></Nav>
       </Header>
-      <main currentPage={currentPage}>
-        <PageContent currentPage={currentPage}>{renderPage()}</PageContent>
+      <main>
+        <PageContent >{renderPage()}</PageContent>
       </main>
       <Footer />
     </div>
