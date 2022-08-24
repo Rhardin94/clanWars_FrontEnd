@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/clanWars_FrontEnd/static/css/main.e6c13ad2.css",
+    "main.js": "/clanWars_FrontEnd/static/js/main.bd7f9bca.js",
+    "static/js/787.c3c20901.chunk.js": "/clanWars_FrontEnd/static/js/787.c3c20901.chunk.js",
+    "index.html": "/clanWars_FrontEnd/index.html",
+    "main.e6c13ad2.css.map": "/clanWars_FrontEnd/static/css/main.e6c13ad2.css.map",
+    "main.bd7f9bca.js.map": "/clanWars_FrontEnd/static/js/main.bd7f9bca.js.map",
+    "787.c3c20901.chunk.js.map": "/clanWars_FrontEnd/static/js/787.c3c20901.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.bd7f9bca.js"
+  ]
+}
