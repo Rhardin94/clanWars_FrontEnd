@@ -55,6 +55,8 @@ class Home extends Component {
   };
   
   componentDidMount() {
+    this.wakeServer();
+    this.getScores();
     this.getTime();
     this.updateInterval = setInterval(() => {
       this.wakeServer();
