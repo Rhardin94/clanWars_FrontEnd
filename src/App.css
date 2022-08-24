@@ -37,6 +37,6 @@
   }
 }
 
-.button :hover {
+button :hover {
   color: rebeccapurple;
 }
