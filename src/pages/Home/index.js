@@ -19,8 +19,8 @@ class Home extends Component {
 
  // This function is used to wake the server up so that it doesn't go to sleep
   wakeServer = async () => {
-    await axios.get(`${localServer}/wake`)
-    // await axios.get(`${liveServer}/wake`) 
+    // await axios.get(`${localServer}/wake`)
+    await axios.get(`${liveServer}/wake`) 
     .then(response => console.log(response.data))
     .catch(err => console.log(err));
   };
@@ -35,8 +35,8 @@ class Home extends Component {
 
   // Get the scores from the server
   getScores = async () => {
-    await axios.get(localServer)
-    // await axios.get(liveServer)
+    // await axios.get(localServer)
+    await axios.get(liveServer)
     .then((response) => {
       console.log(response.data)
       this.setState({

@@ -29,10 +29,8 @@ class Points extends Component {
     console.log(points);
     const numb = 12;
     console.log(numb);
-    await axios.post(`${localServer}/${team}`, {
-      points: parseInt(points)
-    })
-    // await axios.post(`${liveServer}/${team}`)
+    await axios.post(`${localServer}/${team}`, {points: parseInt(points)})
+    // await axios.post(`${liveServer}/${team}` {points: parseInt(points)})
     .then((response) => {
       console.log(response.data)
       this.setState({
