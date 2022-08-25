@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
-// import Nav from "./components/Nav";
+import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import PageContent from './components/PageContent';
 import Home from "./pages/Home";
-// import Green from "./pages/Green";
-// import Red from "./pages/Red";
-// import Blue from "./pages/Blue";
-// import Yellow from "./pages/Yellow";
-
+import Points from "./pages/Points";
 function App() {
   const [pages] = useState([
     {
       name: "home"
     },
+    {
+      name: "add points"
+    }
     // { 
     //   name: "green" 
     // },
@@ -33,14 +32,8 @@ function App() {
     switch (currentPage.name) {
       case 'home':
         return <Home />;
-      // case 'red':
-      //   return <Red />;
-      // case 'blue':
-      //   return <Blue />;
-      // case 'yellow':
-      //   return <Yellow />;
-      // case "green":
-      //   return <Green />;
+      case 'add points':
+        return <Points />;
       default:
         return <Home />;
     }
@@ -49,13 +42,13 @@ function App() {
   const [currentPage, setCurrentPage] = useState(pages[0]);
 
   return (
-    <div className="container">
+    <div className="bg-secondary">
       <Header>
-        {/* <Nav
+        <Nav
           pages={pages}
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
-        ></Nav> */}
+        ></Nav>
       </Header>
       <main>
         <PageContent >{renderPage()}</PageContent>

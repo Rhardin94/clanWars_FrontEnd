@@ -14,23 +14,21 @@ function Nav(props) {
   }, [currentPage]);
 
   return (    
-      <nav className='align-items-center'>
-        <ul className="flex-row">
+      <nav className=''>
+        <div className="flex-row row text-bg-info text-center m-6">
           {pages.map((Page) => (
-            <li
-              className={`mx-5 text-bg-info ${
+            <div
+              className={`mx-5 col-12 text-center m-2 ${
                 currentPage.name === Page.name && 'navActive'
                 }`}
               key={Page.name}
             >
-              <button className='button'
-                onClick={() => setCurrentPage(Page)}
-              >
+              <button className='button bg-secondary text-white text-center col-8' onClick={() => setCurrentPage(Page)} >
                 {capitalizeFirstLetter(Page.name)}
               </button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </nav>
   );
 }
