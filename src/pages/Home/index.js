@@ -1,9 +1,9 @@
 // Needed packages
 import React, { Component } from 'react';
-import axios from "axios";
+import axios from 'axios';
 import moment from "moment";
 const localServer = "http://localhost:3001/api";
-const liveServer = "https://clanwars-backend.herokuapp.com/api";
+const liveServer = "https://clanwarserver.herokuapp.com/api";
 class Home extends Component {
 
   state = {
@@ -20,7 +20,7 @@ class Home extends Component {
  // This function is used to wake the server up so that it doesn't go to sleep
   wakeServer = async () => {
     // await axios.get(`${localServer}/wake`)
-    await axios.get(`${liveServer}/wake`) 
+    await axios.get(`${liveServer}/wake`)
     .then(response => console.log(response.data))
     .catch(err => console.log(err));
   };
@@ -32,13 +32,12 @@ class Home extends Component {
     // console.log(`The time is ${this.state.Time}`);
     // this.state.Time ? console.log(this.state.Time) : console.log("No time");
   };
-
-  // Get the scores from the server
+// Get the scores from the server
   getScores = async () => {
-    // await axios.get(localServer)
-    await axios.get(liveServer)
+    // await axios.get(`${localServer}`)
+    await axios.get(`${liveServer}`)
     .then((response) => {
-      console.log(response.data)
+      // console.log(response.data)
       this.setState({
         Green: response.data[0].points,
         Red: response.data[1].points,
@@ -50,6 +49,8 @@ class Home extends Component {
       console.log(err)
     })
   };
+  // Get the scores from the server
+
  // ComponentDidMount is a React lifecycle method that runs when the component is first rendered
   componentDidMount() {
     this.wakeServer();
