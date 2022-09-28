@@ -29,8 +29,6 @@ class Home extends Component {
   getTime = () => {
     // this.setTime(Date.now().toString());
     this.setState({Time: moment().format("dddd, MMMM Do YYYY, h:mm a")});
-    // console.log(`The time is ${this.state.Time}`);
-    // this.state.Time ? console.log(this.state.Time) : console.log("No time");
   };
 // Get the scores from the server
   getScores = async () => {
@@ -73,10 +71,10 @@ class Home extends Component {
       <section className="my-5 text-center">
       <div className="row">
           <h1>These are the scores as of: {this.state.Time}</h1>
-          <h1 className='bg-success col-lg-3'>Green: {this.state.Green}</h1>
-          <h1 className='bg-danger col-lg-3'>Red: {this.state.Red}</h1>
-          <h1 className='bg-primary col-lg-3'>Blue: {this.state.Blue}</h1>
-          <h1 className='bg-warning col-lg-3'>Yellow: {this.state.Yellow}</h1>
+          <h1 className='bg-success col-lg-3'>{this.state.Green ? `Green: ${this.state.Green}` : "Retrieving Scores..."}</h1>
+          <h1 className='bg-danger col-lg-3'>{this.state.Red ? `Red: ${this.state.Red}` : "Retrieving Scores..."}</h1>
+          <h1 className='bg-primary col-lg-3'>{this.state.Blue ? `Blue: ${this.state.Blue}` : "Retrieving Scores..."}</h1>
+          <h1 className='bg-warning col-lg-3'>{this.state.Yellow ? `Yellow: ${this.state.Yellow}` : "Retrieving Scores..."}</h1>
         </div>
       </section>
     )

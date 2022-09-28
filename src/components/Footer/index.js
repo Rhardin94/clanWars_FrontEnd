@@ -19,12 +19,8 @@ function Footer() {
   ]
 
   return (
-    <footer className="flex-row px-1">
-      {icons.map(icon =>
-      (
-        <a href={icon.link} key={icon.name} target="_blank" rel="noopener noreferrer"><i className={icon.name}></i></a>
-      )
-        )}
+    <footer className="flex-row row text-center">
+      <h1 className='col-lg-12'>2022 &copy;</h1>
     </footer>
   );
 }

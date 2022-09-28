@@ -11,7 +11,7 @@ function App() {
       name: "home"
     },
     {
-      name: "add points"
+      name: "points"
     }
     // { 
     //   name: "green" 
@@ -32,7 +32,7 @@ function App() {
     switch (currentPage.name) {
       case 'home':
         return <Home />;
-      case 'add points':
+      case 'points':
         return <Points />;
       default:
         return <Home />;
@@ -42,7 +42,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(pages[0]);
 
   return (
-    <div className="bg-secondary">
+    <div className="bg-secondary container-fluid">
       <Header>
         <Nav
           pages={pages}
@@ -50,10 +50,10 @@ function App() {
           currentPage={currentPage}
         ></Nav>
       </Header>
-      <main>
+      <main className="row">
         <PageContent >{renderPage()}</PageContent>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

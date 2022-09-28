@@ -3,7 +3,7 @@ import React from 'react';
 const PageContent = (props) => {
 
   return (
-    <div>
+    <div className='container-fluid bg-dark'>
       {props.children}
     </div>
   );
